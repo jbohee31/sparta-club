@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>HOME WORK</title>
+    <style>
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .main_image {
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+
+            background-image: url("https://blog.kakaocdn.net/dn/nYOmK/btq4eKlEVEG/PbgJ7u4y6JXWIokTju0t9k/img.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .main_text {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .main_text span {
+            color: grey;
+            font-size: 0.6em;
+        }
+        .item-order{
+            margin:0 auto;
+            width:500px;
+        }
+        .input-group mb-3{
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            margin: auto;
+            width: 150px;
+            border-radius: 5px;
+            display: block;
+        }
+        .main {
+            width: 500px;
+            margin: auto;
+        }
+        .change_won{
+          color:blue;
+        }
+        #now-rate{
+          color:blue;
+          font-size:1em;
+        }
+    </style>
+
+    <script>
+      $(document).ready(function() {
+        q1();
+      });
+
+      function q1(){
+        $.ajax({
+          type: "GET",
+          url: "http://spartacodingclub.shop/sparta_api/rate",
+          data: {},
+          success: function (response) {
+            let i = response['rate'];
+            $('#now-rate').text(i);
+
+          }
+        })
+      }
+    </script>
+
+</head>
+
+<body>
+<div class="main">
+    <div class="main_image"></div>
+    <div class="main_text">
+        <h2>[공정하다는 착각]<span> 가격 : 21,000원/개</span></h2>
+        <p>이 상품으로 말할 것 같으면 능력주의(Meritocracy)라는 단어는 최근에 등장한 단어다. 그냥 우수한 성적, 능력을 가진 이들에게 더 나은 보상을 한다는 의미이다. 일견 보기에는 당연한
+            것으로
+            보이지만, 실상은 그렇지 않다는 것이 최근 여러 학자들에 의해 제기된 바이다. 특히 좌파나 중도 우파 정치인들과 결부되어 능력주의는 불평등을 심화시키고 사회적 갈등을 부추기고 있다는 주장은
+            상당히
+            설득력을 가지며, 최근 선진국 사회에서의 정치적 지형이나 물질적 불평등을 볼 때, 능력주의는 간과할 수 없는 주제라 할 수 있다.</p>
+        <p class="change_won">달러-원 환율 : <span id="now-rate"></span></p>
+    </div>
+    <div class="item-order">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주문자 성함</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>--수량을 선택하세요.--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주소</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">전화번호</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="submit" class="btn-primary">주문하기</button>
+    </div>
+</div>
+</body>
+
+</html>
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>HOME WORK</title>
+    <style>
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .main_image {
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+
+            background-image: url("https://blog.kakaocdn.net/dn/nYOmK/btq4eKlEVEG/PbgJ7u4y6JXWIokTju0t9k/img.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .main_text {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .main_text span {
+            color: grey;
+            font-size: 0.6em;
+        }
+        .item-order{
+            margin:0 auto;
+            width:500px;
+        }
+        .input-group mb-3{
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            margin: auto;
+            width: 150px;
+            border-radius: 5px;
+            display: block;
+        }
+        .main {
+            width: 500px;
+            margin: auto;
+        }
+        .change_won{
+          color:blue;
+        }
+        #now-rate{
+          color:blue;
+          font-size:1em;
+        }
+    </style>
+
+    <script>
+      $(document).ready(function() {
+        q1();
+      });
+
+      function q1(){
+        $.ajax({
+          type: "GET",
+          url: "http://spartacodingclub.shop/sparta_api/rate",
+          data: {},
+          success: function (response) {
+            let i = response['rate'];
+            $('#now-rate').text(i);
+
+          }
+        })
+      }
+    </script>
+
+</head>
+
+<body>
+<div class="main">
+    <div class="main_image"></div>
+    <div class="main_text">
+        <h2>[공정하다는 착각]<span> 가격 : 21,000원/개</span></h2>
+        <p>이 상품으로 말할 것 같으면 능력주의(Meritocracy)라는 단어는 최근에 등장한 단어다. 그냥 우수한 성적, 능력을 가진 이들에게 더 나은 보상을 한다는 의미이다. 일견 보기에는 당연한
+            것으로
+            보이지만, 실상은 그렇지 않다는 것이 최근 여러 학자들에 의해 제기된 바이다. 특히 좌파나 중도 우파 정치인들과 결부되어 능력주의는 불평등을 심화시키고 사회적 갈등을 부추기고 있다는 주장은
+            상당히
+            설득력을 가지며, 최근 선진국 사회에서의 정치적 지형이나 물질적 불평등을 볼 때, 능력주의는 간과할 수 없는 주제라 할 수 있다.</p>
+        <p class="change_won">달러-원 환율 : <span id="now-rate"></span></p>
+    </div>
+    <div class="item-order">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주문자 성함</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>--수량을 선택하세요.--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주소</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">전화번호</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="submit" class="btn-primary">주문하기</button>
+    </div>
+</div>
+</body>
+
+</html>
